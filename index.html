@@ -58,7 +58,7 @@
 	const queryString = window.location.search;
 	const urlParams = new URLSearchParams(queryString);
 	if (urlParams.get('userId')) {
-		window.$crisp.push(["set", "user:nickname", [urlParams.get('userId')]])
+		window.$crisp.push(["set", "session:data", [[["userId", urlParams.get('userId')]]]])
 	}
 	if (urlParams.get('support')) {
 		window.$crisp.push(['do', 'chat:open']); 
